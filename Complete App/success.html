@@ -1,0 +1,75 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+<title>success</title>
+
+ <meta charset="utf-8">
+    <title>UPLOad</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<style>
+    body{
+        margin: 0;
+        text-align: center;
+    }
+
+    .top-container{
+
+        background-image: url(front.jpg);
+        /* Full height */
+        height: 50%;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+
+        padding-left: 11em;
+        padding-right: 20em;
+        position: relative;
+        padding-top: 100px;
+        width: 61%;
+
+        margin:0px auto 60px ;
+        font-family:
+                Georgia, "Times New Roman",
+                Times, serif;
+        color: #000089;
+    }
+    .middle-container{
+        background-color: #deb887;
+        padding: 50px 0 20px;
+    }
+    .NO-DR{
+        margin-right: 30px;
+        width: 25%;
+        float: left;
+    }
+
+
+</style>
+<body>
+  <div class="top-container">
+<h1>Diabetic Retinopathy Classification Through Web Applications - Results</h1>
+<p>File Name: {{file_name}}</p>
+<p>File Path: {{file_path}}</p>
+{% for element,model_name,label in data %}
+    <p> {{element}}   =   {{model_name}}   =   {{label}}</p>
+   {% endfor %}
+
+     </div>
+
+
+    <div class="middle-container">
+<p><h1><b>Predicted Label is {{label}}</h1></p>
+    </div>
+
+<script>alert(`File Processed Successfully`)</script>
+
+
+
+
+<script>alert(`Predicted Label is {{label}}`)</script>
+
+</body>
+</html>

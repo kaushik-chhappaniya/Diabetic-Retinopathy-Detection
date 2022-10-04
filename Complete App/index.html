@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>DRC</title>
+
+    <link rel="icon" href="favicon.ico">
+  </head>
+  <script>
+      function display() {
+          alert(`File uploaded successfully!!!`)
+          alert(`Backend has started processing models you have selected`)
+      }
+      function checkboxes(){
+          var inputElems = document.getElementsByTagName("input"),
+              count = 0;
+          for (var i=0; i<inputElems.length; i++) {
+              if (inputElems[i].type === "checkbox" && inputElems[i].checked === true) {
+                  count++;
+              }
+              if (count>8){
+                  alert(`Please Select at max 8 models`);
+                  document.getElementsByTagName("checkbox").checked = false;
+                  break;
+              }
+          }
+           }
+
+  </script>
+  <style>
+      body{
+          margin: 0;
+          text-align: center;
+      }
+
+      .top-container{
+
+          background-image: url(templates/css/front.jpg);
+          /* Full height */
+          height: 100%;
+
+          /* Center and scale the image nicely */
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+
+          padding-left: 11em;
+          padding-right: 20em;
+          position: relative;
+          padding-top: 200px;
+          width: 61%;
+
+          margin:0px auto 60px ;
+          font-family:
+                  Georgia, "Times New Roman",
+                  Times, serif;
+          color: #000000;
+      }
+
+      .middle-container{
+          font-family: Calibri, Helvetica, sans-serif;
+      }
+
+      button {
+          background-color: #8b4513;
+          width: 100%;
+          color: #fff5ee;
+          padding: 15px;
+          margin: 10px 0px;
+          border: none;
+          cursor: pointer;
+      }
+      form {
+          border: 3px solid #cd5c5c;
+      }
+      input[type=text], input[type=password] {
+          width: 100%;
+          margin: 8px 0;
+          padding: 12px 20px;
+          display: inline-block;
+          border: 2px #8b4513;
+          box-sizing: border-box;
+      }
+      button:hover {
+          opacity: 0.7;
+      }
+      .cancelbtn {
+          width: auto;
+          padding: 10px 18px;
+          margin: 10px 5px;
+      }
+
+      .container {
+          padding: 25px;
+      }
+
+      .Information{
+          width: 50%;
+          margin:100px auto;
+          text-align: left;
+
+      }
+      .NO-DR{
+          margin-right: 30px;
+          width: 25%;
+          float: left;
+      }
+      .NPDR{
+          margin-left: 30px;
+          width: 25%;
+          float: right;
+      }
+      .PDR{
+          margin-right: 30px;
+          width: 25%;
+          float: left;
+      }
+      .bottom-container{
+          background-color: #deb887;
+          padding: 50px 0 20px;
+      }
+      .copyright{
+          color: #EAF6F6;
+          font-size: 0.75rem;
+          padding: 20px 0;
+      }
+      .p{
+          line-height: 2;
+      }
+
+  </style>
+  <body>
+
+    <div class="top-container">
+      <h1>Diabetic Retinopathy Classification Through Web Applications</h1>
+    </div>
+<script>console.log("Here we go")</script>
+ <form action = "{{url_for('success')}}" method = "post" enctype="multipart/form-data">
+     <p><input type="file" name="file"></p>
+     <p><label >Models</label></p>
+     {% for model_name in model_arr %}
+     <input type="checkbox" id="model" value={{model_name}} name="model" onchange="checkboxes()">{{model_name}}
+    {% endfor %}
+    <p><input type="submit" value="upload"  onclick=display()></p>
+    
+</form>
+
+    <div class="middle2-container">
+      <div class="Information">
+        <img class="NO-DR" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_U6osHY04oNbURxgfNZHESqdZ5VIVguVNC629PtrKfU_glhOFkRvo8xwEhVFWLbYujv0&usqp=CAU" alt="NO-DR">
+        <h3>Non Diabetic Retinopathy</h3>
+        <p>Non-diabetic retinopathy has been defined in different studies to include microaneurysms, retinal haemorrhages (dot, blot, and flame shaped), hard exudates, cotton wool spots, retinal venular abnormalities (venous beading and tortuosity), intraretinal microvascular abnormalities, and new vessels.</p>
+      </div>
+      <div class="Information">
+        <img class="NPDR" src="https://webeye.ophth.uiowa.edu/eyeforum/tutorials/diabetic-retinopathy-med-students/smaller/NPDR.jpg" alt="NPDR">
+        <h3> Non-proliferative diabetic retinopathy (NPDR)</h3>
+        <p> Non-proliferative diabetic retinopathy (NPDR) is the most common form of diabetic retinopathy. Early stages consist of edema and hard exudates, lipid that has leaked from abnormal blood vessels, in the central retina, resulting in blurred central vision.</p>
+      </div>
+      <div class="Information">
+        <img class="PDR" src="https://webeye.ophth.uiowa.edu/eyeforum/tutorials/diabetic-retinopathy-med-students/smaller/pdr2.jpg" alt="PDR">
+        <h3> Proliferative diabetic retinopathy (PDR)</h3>
+        <p>Proliferative diabetic retinopathy (PDR) is the more advanced form of the disease. At this stage, circulation problems deprive the retina of oxygen. As a result, new, fragile blood vessels can begin to grow in the retina and into the vitreous, the gel-like fluid that fills the back of the eye.</p>
+      </div>
+    </div>
+</center>
+    <
+    <div class="bottom-container">
+      <a class="footer-link" href="https://www.linkedin.com/in/manjiri-kshirsagar-717ba1219/">LinkedIn</a>
+      <a class="footer-link" href="https://www.instagram.com/__manjirik/?hl=en">Instagram</a>
+      <a class="footer-link" href="https://manjiri2001.github.io/CV/">Website</a>
+      <p class="copyright">© 2022 BE E&TC A- (8014_8001_8023)</p>
+    </div>
+
+  </body>
+</html>

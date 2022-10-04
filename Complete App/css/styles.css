@@ -1,0 +1,99 @@
+body{
+  margin: 0;
+  text-align: center;
+}
+
+.top-container{
+
+  background-image: url(front.jpg);
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  padding-left: 11em;
+  padding-right: 20em;
+  position: relative;
+  padding-top: 200px;
+  width: 61%;
+
+  margin:0px auto 60px ;
+  font-family:
+  Georgia, "Times New Roman",
+  Times, serif;
+  color: #000000;
+}
+
+.middle-container{
+  font-family: Calibri, Helvetica, sans-serif;
+}
+
+  button {
+       background-color: #8b4513;
+       width: 100%;
+        color: #fff5ee;
+        padding: 15px;
+        margin: 10px 0px;
+        border: none;
+        cursor: pointer;
+         }
+form {
+        border: 3px solid #cd5c5c;
+    }
+input[type=text], input[type=password] {
+        width: 100%;
+        margin: 8px 0;
+        padding: 12px 20px;
+        display: inline-block;
+        border: 2px #8b4513;
+        box-sizing: border-box;
+    }
+button:hover {
+        opacity: 0.7;
+    }
+.cancelbtn {
+        width: auto;
+        padding: 10px 18px;
+        margin: 10px 5px;
+    }
+
+.container {
+        padding: 25px;
+    }
+
+.Information{
+      width: 50%;
+      margin:100px auto;
+      text-align: left;
+
+    }
+.NO-DR{
+      margin-right: 30px;
+      width: 25%;
+      float: left;
+    }
+.NPDR{
+      margin-left: 30px;
+      width: 25%;
+      float: right;
+    }
+.PDR{
+      margin-right: 30px;
+      width: 25%;
+      float: left;
+    }
+.bottom-container{
+  background-color: #deb887;
+  padding: 50px 0 20px;
+}
+.copyright{
+  color: #EAF6F6;
+  font-size: 0.75rem;
+  padding: 20px 0;
+}
+.p{
+  line-height: 2;
+}
